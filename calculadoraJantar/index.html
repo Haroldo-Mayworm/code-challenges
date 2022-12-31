@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora do Restaurante</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="titulo">
+        <h1>Valor por pessoa</h1>
+      </div>
+      <div>
+        <form action="">
+          <label for="valorTotal">Quanto custou o jantar:</label>
+          <input id="valorTotal" type="number" name="Valor total" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" />
+          <label for="pessoasTotal">Quantos vão dividir a conta:</label>
+          <input id="pessoasTotal" type="text" name="Nº de pessoas" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" />
+          <label for="taxaGorjeta">Gorjeta:</label>
+          <select id="taxaGorjeta" name="taxaGorjeta">
+            <option disabled selected value="0">Defina a taxa de gorjeta </option>
+            <option value="0.2">20% - Bom</option>
+            <option value="0.1">10% - Normal</option>
+            <option value="0.05">5% - Ruim</option>
+            <option value="0">0% - Péssimo</option>
+          </select>
+        </form>
+        <button type="button" id="btn">Calcular!</button>
+      </div>
+      <div class="valorCalculado" id="valorCalculado">
+        <span>R$</span><span id="valorDividido">0.00</span>
+        <span>Por pessoa</span>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
